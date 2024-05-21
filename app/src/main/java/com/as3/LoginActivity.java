@@ -8,16 +8,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.facebook);
+        setContentView(R.layout.login);
         Button signInBtn = (Button) findViewById(R.id.signInBtn);
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.onSignIn(v);
+                LoginActivity.this.onSignIn(v);
             }
         });
     }
@@ -28,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
         EditText passwordInputField = (EditText) findViewById(R.id.password);
         String password = (String) passwordInputField.getText().toString();
         if (username.equals("admin") && password.equals("123456")) {
-            Toast.makeText(MainActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(MainActivity.this, HomeActivity.class);
+            Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
             i.putExtra("user",username);
             i.putExtra("pass",password);
             startActivity(i);
         }
         else {
-            Toast.makeText(MainActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
         }
     }
 
