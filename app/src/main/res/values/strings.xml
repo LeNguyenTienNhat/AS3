@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AS3</string>
+    <string name="user_field">Email or Phone</string>
+    <string name="password_field">Password</string>
+    <string name="sign_up_suggestion">Sign up for Facebook</string>
+    <string name="sign_in_button">LOG IN</string>
+    <string name="forgot_password_suggestion">Forgot password?</string>
+    <string name="current_language">English</string>
+    <string name="change_language">Change</string>
+    <string name="faq">FAQ</string>
+    <string name="separator">.</string>
+    <string name="title_activity_home">Home</string>
+</resources>
