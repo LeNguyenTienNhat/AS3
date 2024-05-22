@@ -12,21 +12,16 @@
         android:paddingRight="32dp"
         android:paddingTop="32dp"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <TextView
             android:id="@+id/user"
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"/>
-
-        <TextView
-            android:id="@+id/pass"
-            android:textAlignment="center"
+            android:textSize="20sp"
             android:text="@string/app_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_margin="50dp"/>
 
         <Button
             android:id="@+id/close_btn"

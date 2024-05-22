@@ -61,8 +61,7 @@
             android:text="@string/sign_in_button"
             style="@style/custom_button"
             app:cornerRadius="0dp"
-            app:backgroundTint="@color/heavy_faded_white"
-            android:onClick="onSignIn"/>
+            app:backgroundTint="@color/selectors"/>
 
         <TextView
             android:id="@+id/signUpText"

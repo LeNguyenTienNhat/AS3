@@ -13,30 +13,34 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        Button signInBtn = (Button) findViewById(R.id.signInBtn);
-        signInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LoginActivity.this.onSignIn(v);
-            }
-        });
+        Button signInBtn = findViewById(R.id.signInBtn);
+        signInBtn.setOnClickListener(LoginActivity.this::onSignIn);
     }
 
     public void onSignIn(View v) {
-        EditText usernameInputField = (EditText) findViewById(R.id.user);
-        String username = (String) usernameInputField.getText().toString();
-        EditText passwordInputField = (EditText) findViewById(R.id.password);
-        String password = (String) passwordInputField.getText().toString();
+        EditText usernameInputField = findViewById(R.id.user);
+        String username = usernameInputField.getText().toString();
+        EditText passwordInputField = findViewById(R.id.password);
+        String password = passwordInputField.getText().toString();
         if (username.equals("admin") && password.equals("123456")) {
             Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(LoginActivity.this, HomeActivity.class);
             i.putExtra("user",username);
-            i.putExtra("pass",password);
             startActivity(i);
+            LoginActivity.this.finish();
         }
         else {
             Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EditText usernameInputField = findViewById(R.id.user);
+        EditText passwordInputField = findViewById(R.id.password);
+        usernameInputField.setText("");
+        passwordInputField.setText("");
     }
 
 }
